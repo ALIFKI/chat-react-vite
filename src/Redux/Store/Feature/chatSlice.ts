@@ -125,7 +125,7 @@ export const getChatRooms = createAsyncThunk(
   "chatRoom/fetchChatRooms",
   async (_, thunkAPI) => {
     try {
-      const http = new Http("http://localhost:5433");
+      const http = new Http(import.meta.env.VITE_BASE_URL);
       const auth = selectAuth(thunkAPI.getState() as RootState);
       const token = auth.user?.token;
       console.log(auth);
@@ -152,7 +152,7 @@ export const getMessages = createAsyncThunk(
   "chatRoom/fetchMessages",
   async (chatId: number, thunkAPI) => {
     try {
-      const http = new Http("http://localhost:5433");
+      const http = new Http(import.meta.env.VITE_BASE_URL);
       const auth = selectAuth(thunkAPI.getState() as RootState);
       const token = auth.user?.token;
       const response: { data: { data: Message[] } } = await http.get(
@@ -174,7 +174,7 @@ export const sendMessage = createAsyncThunk(
   "chatRoom/sendMessage",
   async (message: { chatId: number; content: string }, thunkAPI) => {
     try {
-      const http = new Http("http://localhost:5433");
+      const http = new Http(import.meta.env.VITE_BASE_URL);
       const auth = selectAuth(thunkAPI.getState() as RootState);
       const token = auth.user?.token;
       const response: {

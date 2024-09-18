@@ -38,7 +38,7 @@ export const login = createAsyncThunk<
 >("auth/login", async (credentials, { rejectWithValue }) => {
   console.log(credentials);
   try {
-    const http = new Http("http://localhost:5433");
+    const http = new Http(import.meta.env.VITE_BASE_URL);
     const response: {
       data: UserResponse;
     } = await http.post("/api/v1/auth/login", {

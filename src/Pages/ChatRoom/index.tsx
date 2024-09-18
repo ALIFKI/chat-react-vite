@@ -142,7 +142,7 @@ export default function ChatRoom() {
                 <h2 className="text-xl font-bold text-white">Chats</h2>
               </div>
               <ScrollArea className="h-[calc(100vh-8rem)] relative">
-                {chatRooms.map((chat) => (
+                {chatRooms?.map((chat) => (
                   <div
                     onClick={() => {
                       handleGetMessage(chat.chat_id);
