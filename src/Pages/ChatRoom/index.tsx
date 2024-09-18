@@ -62,7 +62,7 @@ export default function ChatRoom() {
   };
 
   const handleGetMessage = async (_id: number) => {
-    const message = await dispatch(getMessages(_id) as unknown as AnyAction);
+    await dispatch(getMessages(_id) as unknown as AnyAction);
     setRoomChat({
       id: _id,
       chat_id: _id,

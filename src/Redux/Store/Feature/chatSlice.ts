@@ -108,7 +108,7 @@ const chatRoomSlice = createSlice({
       .addCase(sendMessage.pending, (state) => {
         state.send_message_status = "loading";
       })
-      .addCase(sendMessage.fulfilled, (state, action) => {
+      .addCase(sendMessage.fulfilled, (state) => {
         state.send_message_status = "succeeded";
       })
       .addCase(sendMessage.rejected, (state, action) => {

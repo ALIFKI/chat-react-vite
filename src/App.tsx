@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
 import "./App.css";
 import RoutesLayout from "./Router/index.js";
@@ -5,7 +6,6 @@ import { socket } from "./lib/Socket/index.js";
 
 function App() {
   const [isConnected, setIsConnected] = useState(socket.connected);
-  const [fooEvents, setFooEvents] = useState([]);
 
   useEffect(() => {
     function onConnect() {
@@ -27,6 +27,7 @@ function App() {
 
   return (
     <>
+      {isConnected ? null : null}
       <RoutesLayout></RoutesLayout>
     </>
   );
